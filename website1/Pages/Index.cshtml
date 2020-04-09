@@ -9,10 +9,40 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<head>
-    <script src ="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script> 
-</head>
-<body>
-    <iframe src='https://webchat.botframework.com/embed/MTCVABot-dp43h5i?s=lCnaQn76hD8.k8MGE5v5uqea9Pqg9uGtWDc9TBnP56WteiLIyU5c81U' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
-</body>
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
+    ></script>
+    <style>
+      html,
+      body {
+         height: 100%;
+      }
 
+      body {
+        margin: 0;
+      }
+
+      #webchat {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+            token: 'vWgplCkL71c.msyXHNePviWyTp2FcL5OeWTiYYTI9snf8ExSzrBPlds'
+          }),
+          userID: 'YOUR_USER_ID',
+          username: 'Web Chat User',
+          locale: 'en-US',
+          botAvatarInitials: 'WC',
+          userAvatarInitials: 'WW'
+        },
+        document.getElementById('webchat')
+      );
+    </script>
